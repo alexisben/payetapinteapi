@@ -1,7 +1,7 @@
 <h3>Salut</h3>
 
 <% if user_signed_in?  %>
-    <h1>Listing des <%= @bars.length%> bars</h1>
+    <h1>Listing des <%= @bars.length %> bars</h1>
     <h2><%= link_to 'New Bar', new_bar_path %></h2>
 <% end
 if user_signed_in? %>
