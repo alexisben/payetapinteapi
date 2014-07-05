@@ -1,0 +1,52 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @bar.name %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @bar.price %>
+</p>
+<div id="map-canvas" data-lat="<%= @bar.latitude %>" data-lng="<%= @bar.longitude %>"></div>
+
+<p>
+  <b>Latitude:</b>
+  <%= @bar.latitude %>
+</p>
+
+<p>
+  <b>Longitude:</b>
+  <%= @bar.longitude %>
+</p>
+
+<p>
+  <b>Address:</b>
+
+  <%= @bar.addr_label  %>,
+  <%= @bar.addr_city %>,
+  <%= @bar.addr_postal_code %>
+  <%= @bar.addr_country %>
+</p>
+
+<p>
+  <b>Start happy:</b>
+  <%= @bar.start_happy %>
+</p>
+
+<p>
+  <b>End happy:</b>
+  <%= @bar.end_happy %>
+</p>
+
+<p>
+  <b>Price happy:</b>
+  <%= @bar.price_happy %>
+</p>
+
+<% if user_signed_in?  %>
+    <%= current_user %>
+    <%= link_to 'Edit', edit_bar_path(@bar) %> |
+<% end %>
+<%= link_to 'Back', bars_path %>

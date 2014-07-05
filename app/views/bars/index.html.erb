@@ -1,0 +1,45 @@
+<h3>Listing bars</h3>
+<div class="table-responsive">
+<table class="table table-condensed">
+  <thead>
+  <tr>
+    <th><%= sortable "name", "name" %></th>
+    <th><%= sortable "addr_city", "city" %></th>
+    <th><%= sortable "price", "price" %></th>
+    <th>Address</th>
+    <th><%= sortable "happy", "happy" %></th>
+    <th><%= sortable "price_happy", "happy price" %></th>
+    <th><%= sortable "enable", "happy enable" %></th>
+    <th><%= sortable "partner", "partner price" %></th>
+    <th>Phone</th>
+    <th><%= sortable "created_at", "Creation" %></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  </thead>
+<tbody>
+<% @bars.each do |bar|%>
+  <tr>
+    <td><%= bar.name %></td>
+    <td><%= bar.addr_city %></td>
+    <td><%= bar.price %></td>
+    <td><%= bar.address %></td>
+    <td><%= bar.happy %></td>
+    <td><%= bar.price_happy %></td>
+    <td><%= bar.enable %></td>
+    <td><%= bar.partner %></td>
+    <td><%= bar.phone %></td>
+    <td><%= time_ago_in_words(bar.created_at) %></td>
+    <td><%= link_to 'Show', bar, :class => 'btn btn-mini' %></td>
+    <td><%= link_to 'Edit', edit_bar_path(bar), :class => 'btn btn-mini' %></td>
+    <td><%= link_to 'Destroy', bar, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-mini' %></td>
+  </tr>
+<% end %>
+</tbody>
+
+</table>
+</div>
+<br />
+
+<%= link_to 'New Bar', new_bar_path %>
